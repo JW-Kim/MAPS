@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.maps.dao.CompanyDao">
+    <resultMap id="CompayMap" type="com.maps.model.Company">
+        <id column="COMPANY_ID"         property="companyId"/>
+        <result column="MAP_TYPE"       property="mapType"/>
+        <result column="COMPANY_NM"     property="companyNm"/>
+        <result column="COMPANY_TYPE"  property="companyType"/>
+        <result column="TEL"             property="tel"/>
+        <result column="ADDRESS"        property="address"/>
+        <result column="REG_DTM"        property="regDtm"/>
+
+    </resultMap>
+
+    <select id="selectAllCompany" parameterType="map" resultMap="CompayMap">
+        SELECT COMPANY_ID,
+                MAP_TYPE,
+                COMPANY_NM,
+                COMPANY_TYPE,
+                TEL,
+                ADDRESS,
+                REG_DTM
+        FROM COMPANY_F
+    </select>
+
+</mapper>
