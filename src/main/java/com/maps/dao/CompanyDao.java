@@ -9,5 +9,9 @@ import java.util.Map;
 
 @Repository("com.maps.dao.CompanyDao")
 public interface CompanyDao {
-    public List<Company> selectAllCompany();
+    public List<Company> selectCompany(Map<String, Object> paramMap);
+
+    public int deleteCompany(Map<String, Object> paramMap);
+
+    public int insertCompany(Map<String, Object> paramMap);
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @Service("com.maps.service.impl.CompanyService")
 public class CompanyServiceImpl implements CompanyService {
@@ -14,7 +15,15 @@ public class CompanyServiceImpl implements CompanyService {
     @Resource(name = "com.maps.dao.CompanyDao")
     private CompanyDao companyDao;
 
-    public List<Company> selectAllCompany() {
-        return companyDao.selectAllCompany();
+    public List<Company> selectCompany(Map<String, Object> paramMap) {
+        return companyDao.selectCompany(paramMap);
+    }
+
+    public int deleteCompany(Map<String, Object> paramMap) {
+        return companyDao.deleteCompany(paramMap);
+    }
+
+    public int insertCompany(Map<String, Object> paramMap) {
+        return companyDao.insertCompany(paramMap);
     }
 }
